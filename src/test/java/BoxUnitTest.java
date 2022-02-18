@@ -1,14 +1,14 @@
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 
 public class BoxUnitTest {
     private static int boxSquare;
     private static int boxPerimeter;
     private static double boxAverage;
 
-    @BeforeClass
+    @BeforeAll
     public static void setup() {
         Box box = new Box(3, 4, 5);
         boxSquare = box.squareBox();
@@ -19,19 +19,19 @@ public class BoxUnitTest {
     @Test
     public void testSquare() {
         int vol = 60;
-        Assert.assertEquals(vol, boxSquare);
+        Assertions.assertEquals(vol,boxSquare);
     }
 
     @Test
     public void testPerimeter() {
         int vol = 12;
-        Assert.assertEquals(vol, boxPerimeter);
+        Assertions.assertEquals(vol,boxPerimeter);
     }
 
     @Test
     public void testAverage() {
         double vol = 4.0;
-        Assert.assertEquals(vol, boxAverage, 0.01);
+        Assertions.assertEquals(vol,boxAverage);
     }
 
 }
